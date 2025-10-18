@@ -17,13 +17,13 @@ let running = false;
 
 const initialize_game = () => {
   cells.forEach((cell) => cell.addEventListener('click', cell_clicked));
-  restart_btn.addEventListener('click', restart_btn);
+  restart_btn.addEventListener('click', restart_game);
   status_text.textContent = `${current_player}'s turn`;
   running = true;
 };
 
 const cell_clicked = () => {
-  const cell_index = this.getAttribute(cell_index);
+  const cell_index = this.getAttribute("cellIndex");
   if (options[cell_index] != '' || !running) {
     return;
   }
